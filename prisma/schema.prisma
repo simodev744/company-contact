@@ -1,0 +1,28 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Company {
+  id           Int      @id @default(autoincrement())
+  logo         String?
+  companyName  String
+  activity     String?
+  status       String?
+  category     String?
+  address      String?
+  city         String?
+  country      String?
+  tel1         String?
+  tel2         String?
+  email        String?
+  capital      Float?
+  dateCreation DateTime?
+  numberSalarie Int?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
